@@ -43,11 +43,22 @@ Vallat et al [20] evaluated the functional connectivity of different brain regio
 
 ## **_When_** is it more probable to experience it? When not?
 
+Researches show that the intensity of behavioral and brain disruptions upon awakening is closely tied to sleep deprivation, chronobiology and the duration of previous sleep [22], but one of the most critical factors is the sleep stage at awakening, especially for naps that last less than 1 hour and sleep deprivation is moderate [23, 24].
+
+Abrupt awakening during N3 produces more sleep inertia than awakening during N1 or N2, REM sleep being intermediate [22]. Vallat et al in 2019 [20]  studied cognition and cerebral functioning before and after a 45-min nap. They concluded that the first minutes after awakening from sleep are marked by a decrease in cognitive performances and the intrusion of sleep-specific features (spectral power and functional connectivity) into wakefulness brain activity. They also remark that awakening from N3 makes a more pronounced pattern of functional disruption than after awakening from N2 sleep and that the time course of sleep inertia dissipation could be faster if awakening in N2 than in N3. 
+
+For the other hand, sleep inertia related to awakening from REM have led to more controversy. Some studies could not find any effect in memory performance [23] whereas other experts found that performance on a vigilance task is poorer after awakenings from REM periods with higher eye-movement density than after awakenings from REM periods with lower eye-movement density [26]. 
+
+the presence of a higher arousal level (expressed by the autonomic activation pattern) after stage 2 than after REM awakening. The prevalence in beta power after stage 2 awakenings could be also interpreted as an effect of the brain's effort to maintain adequate levels of alertness because the level of sleep inertia or grogginess is greater compared to the REM sleep awakenings (Marzano et al. 2011).
+
+
+### Other aspects that are related
+
 * Drinking caffeine just before a nap has been suggested as a useful countermeasure for sleepy drivers [53]. Both caffeine infusion during sleep deprivation (0.3 mg/kg/hr) and caffeine gum chewed for five minutes immediately after awakening (~85 mg caffeine) lessen sleep inertia following naps [12, 54]. 
 
 * Simple exposure to light of varying intensities, either during or immediately after sleep, does not meaningfully impact sleep inertia as measured subjectively or objectively [55, 56]. In contrast, dawn simulators, which gradually increase the lux of light before awakening, have preliminary promise. Three studies have found improvements in subjective sleepiness on awakening, with modest objective performance benefits in one [57-59]. All three studies reported financial support from the simulator manufacturers.
 
-* Pink noise at 75 decibels improves performance following a nap at midnight, but may have limited generalizability given that it also worsens performance following a rest at 0400 [60]. 
+* Pink noise at 75dB improves performance following a nap at midnight, but may have limited generalizability given that it also worsens performance following a rest at 0400 [60]. 
 
 * Application of a cold wet cloth and fan breeze improves post-nap performance [61] and is consistent with the hypothesis that sleep inertia is modulated by changes in body temperature [17]. Further work is needed to clarify the role of these interventions in dissipating sleep inertia, especially in occupational settings.
 
@@ -107,3 +118,13 @@ disease 2000; 188: 340-8.
 [20] Vallat R, Meunier D, Nicolas A, Ruby P. Hard to wake up? The cerebral correlates of sleep inertia assessed using combined behavioral, EEG and fMRI measures. NeuroImage. 2019;184:266–278.
 
 [21] Picchioni D,Duyn JH,Horovitz SG. Sleep and the functional connectome. NeuroImage. 2013;80:387–396.
+
+[22] Tassi, P., & Muzet, A. (2000). Sleep inertia. Sleep medicine reviews, 4(4), 341-353.
+
+[23] Tassi, P., Nicolas, A., Dewasmes, G., Eschenlauer, R., Ehrhart, J., Salame, P., ... & Libert, J. P. (1992). Effects of noise on sleep inertia as a function of circadian placement of a one-hour nap. Perceptual and motor skills, 75(1), 291-302.
+
+[24] Tassi, P., Nicolas, A., Seegmuller, C., Dewasmes, G. A., Libert, J. P., & Muzet, A. (1993). Interaction of the alerting effect of noise with partial sleep deprivation and circadian rhythmicity of vigilance. Perceptual and motor skills, 77(3_suppl), 1239-1248.
+
+[25] Stones, M. J. (1977). Memory performance after arousal from different sleep stages. British Journal of Psychology, 68(2), 177-181
+
+[26] Kouiack, D., & Schuitz, K. J. (1974). Task performance after awakenings from different stages of sleep. Perceptual and Motor Skills, 39(2), 792-794.
