@@ -4,6 +4,7 @@ import pandas as pd
 
 from playsound import playsound
 
+import configuration
 import tempfile
 import mne
 import yasa
@@ -26,7 +27,8 @@ def load_eeg_data(file):
     return raw
 
 #eeg_file = st.file_uploader("Upload EEG data file (only EDF format)", type=['edf'])
-eeg_file = r'final_course_project\data\SN003.edf'
+eeg_file = configuration.EDF_PATH
+scoring_file = configuration.SCORING_PATH
 
 if eeg_file is not None:
     # Get EDF necessary data
@@ -96,7 +98,7 @@ if eeg_file is not None:
             if current_stage == 'N2':
                 st.write("ALERT! Person is in N2 stage. Wake up...")
                 st.balloons()  # Simulate alert with balloons (you can replace this with a sound or other alert)
-                playsound(r'C:\Users\ayvazquez\aylin\BCI_UNL_AllisonPeterson_course\final_course_project\data\alarm_sound.mp3')
+                playsound(configuration.ALARM_PATH)
                 break
 else:
     st.write("Please upload an EEG file to start.")
