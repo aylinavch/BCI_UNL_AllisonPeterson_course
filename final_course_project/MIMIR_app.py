@@ -1,11 +1,14 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
+
+from playsound import playsound
+
 import tempfile
 import mne
 import yasa
 import time
 import os
-import pandas as pd
 
 # Title of the app
 st.title("MIMIR :sleeping:")
@@ -19,11 +22,12 @@ def load_eeg_data(file):
     #    tmp_file_path = tmp_file.name
     tmp_file_path = file
     raw = mne.io.read_raw_edf(tmp_file_path, preload=True)
-    os.remove(tmp_file_path)
+    #os.remove(tmp_file_path)
     return raw
 
 #eeg_file = st.file_uploader("Upload EEG data file (only EDF format)", type=['edf'])
-eeg_file=r'final_course_project\data\SN001.edf'
+eeg_file = r'final_course_project\data\SN003.edf'
+
 if eeg_file is not None:
     # Get EDF necessary data
     raw = load_eeg_data(eeg_file)
@@ -60,6 +64,10 @@ if eeg_file is not None:
         
         n_windows = len(data[0]) // window_size  # Total number of windows
 
+        # Create placeholders for dynamic updates
+        window_info_placeholder = st.empty()
+        stage_info_placeholder = st.empty()
+
         for i in range(n_windows):
             start = i * window_size
             end = start + window_size - 1
@@ -71,7 +79,7 @@ if eeg_file is not None:
             chunk_data = data[:, start:end]
 
             # Use YASA to predict sleep stages for this window (this is simulated)
-            st.write(f"Analyzing window {i + 1}/{n_windows}: {start/fs:.2f}-{(end+1)/fs:.2f} seconds")
+            window_info_placeholder.write(f"Analyzing window {i + 1}/{n_windows}: {start/fs:.2f}-{(end+1)/fs:.2f} seconds")
 
             # Create a temporary Raw object for this chunk (YASA requires an MNE Raw object)
             raw_chunk = mne.io.RawArray(chunk_data, raw.info)
@@ -82,13 +90,13 @@ if eeg_file is not None:
 
             # Current sleep stage (for the last window)
             current_stage = hypno[-1]  # Last sleep stage detected in the current window
-            st.write(f"Predicted sleep stage for the current window: {current_stage}")
+            stage_info_placeholder.write(f"Predicted sleep stage for the current window: {current_stage}")
 
             # Trigger alert if N2 stage is detected
             if current_stage == 'N2':
                 st.write("ALERT! Person is in N2 stage. Wake up...")
                 st.balloons()  # Simulate alert with balloons (you can replace this with a sound or other alert)
-                
+                playsound(r'C:\Users\ayvazquez\aylin\BCI_UNL_AllisonPeterson_course\final_course_project\data\alarm_sound.mp3')
                 break
 else:
     st.write("Please upload an EEG file to start.")
