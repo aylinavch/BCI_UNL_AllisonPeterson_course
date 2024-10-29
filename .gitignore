@@ -1,2 +1,5 @@
 .venv
 final_course_project/data/*
+final_course_project\__pycache__
+final_course_project\frontend\__pycache__
+final_course_project\backend\__pycache__
