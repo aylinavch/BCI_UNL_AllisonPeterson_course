@@ -5,8 +5,8 @@ from backend import simulation
 import matplotlib.pyplot as plt
 import datetime
 
-
 # Header
+st.image("final_course_project\data\messi.jpg", use_column_width='always')
 st.title(header.app_name_emoji)
 st.subheader(header.header, divider='blue')
 
@@ -40,9 +40,8 @@ if start_button:
     if utils.check_if_OpenBCI():
         print('Not ready yet')
     else:
-        data, raw_info = simulation.load_psg()
-        fs, ch_names = raw_info['sfreq'], raw_info['ch_names']
-        st.title('Monitoring your sleep ...')
+        raw = simulation.load_psg()
+        st.subheader('Monitoring your sleep ...')
         col1, col2 = st.columns(2)
         with col1:
             stage_placeholder = st.empty()
@@ -50,7 +49,7 @@ if start_button:
             prevstage_placeholder = st.empty()
         hypno_placeholder = st.empty()
         plot_placeholder = st.empty()
-        simulation.plotter(data, fs, raw_info, plot_placeholder, stage_placeholder, hypno_placeholder, prevstage_placeholder,t_alpha,t_omega)
+        simulation.simulate(raw, plot_placeholder, stage_placeholder, hypno_placeholder, prevstage_placeholder, t_alpha, t_omega)
 
 
 else:
