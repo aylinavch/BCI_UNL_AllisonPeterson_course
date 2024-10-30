@@ -100,10 +100,10 @@ def plotter(data, fs, raw_info, plot_placeholder, stage_placeholder, hypno_place
             if n_epoch > 5:
                 if now.time() > t_alpha:
                     if not 'N3' in SLEEP_STAGES[-5:-1]:
-                        st.write("Wake up! The time is now", datetime.now().strftime('%H:%M:%S'))
+                        st.write("Wake up! The time is now", datetime.now().strftime('%H:%M'))
                         playsound('final_course_project/data/alarm_sound.mp3')
                 elif now.time() > t_omega:
-                    st.write("Wake up! The time is now", datetime.now().strftime('%H:%M:%S'))
+                    st.write("Wake up! The time is now", datetime.now().strftime('%H:%M'))
                     playsound('final_course_project/data/alarm_sound.mp3')
         stage_placeholder.write(f"**Epoch:** {n_epoch}")
         prevstage_placeholder.write(f":blue[**Previous sleep stage:** {current_stage}]")
