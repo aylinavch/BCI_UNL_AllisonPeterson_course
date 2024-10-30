@@ -106,11 +106,10 @@ def simulate(raw, plot_placeholder, stage_placeholder, hypno_placeholder, prevst
             
             now = datetime.now()
             if n_epoch > 5:
-                if now.time() > t_alpha:
-                    if not 'N3' in SLEEP_STAGES[-5:-1]:
-                        st.write("Wake up!", datetime.now().strftime('%H:%M'))
-                        playsound(configuration.ALARM_PATH)
-                elif now.time() > t_omega:
+                if now.time() > t_alpha and not 'N3' in SLEEP_STAGES[-5:]: # Before deadline time
+                    st.write("Wake up!", datetime.now().strftime('%H:%M'))
+                    playsound(configuration.ALARM_PATH)
+                elif now.time() > t_omega: #WAKE UP - Deadline time
                     st.write("Wake up!", datetime.now().strftime('%H:%M'))
                     playsound(configuration.ALARM_PATH)
         
