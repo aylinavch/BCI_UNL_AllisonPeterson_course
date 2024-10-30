@@ -2,8 +2,8 @@
 final_course_project/data/*
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+__pycache__/*
+*/__pycache__
 *.py[cod]
-
-# C extensions
-*.so
+final_course_project/backend/__pycache__/*
+final_course_project/frontend/__pycache__/*

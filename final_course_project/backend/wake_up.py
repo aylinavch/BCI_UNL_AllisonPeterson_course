@@ -31,7 +31,7 @@ def collect_chunks(data, fs, raw_info):
     
     return SLEEP_STAGES
     
-def alarm_on(wake_up_time,SLEEP_STAGES):
+def alarm_on(wake_up_time, SLEEP_STAGES):
     if datetime.now() > wake_up_time:
         if not any(SLEEP_STAGES[-6:-1]=='N3'):
             print("Wake up! The time is now", datetime.now().strftime('%H:%M:%S'))
