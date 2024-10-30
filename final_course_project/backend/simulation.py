@@ -1,11 +1,14 @@
 import configuration
 import mne
 import time
+from datetime import datetime
+from playsound import playsound
 import numpy as np
 import streamlit as st
 #import backend.simulation_utils
 from matplotlib import pyplot as plt
 import yasa
+
 
 def load_psg():
     """
@@ -15,7 +18,7 @@ def load_psg():
     return raw.get_data(), raw.info
 #scoring_path = configuration.SCORING_PATH
 
-def plotter(data, fs, raw_info, plot_placeholder, stage_placeholder, hypno_placeholder, prevstage_placeholder, SLEEP_STAGES = ['W']):
+def plotter(data, fs, raw_info, plot_placeholder, stage_placeholder, hypno_placeholder, prevstage_placeholder, t_alpha,t_omega,SLEEP_STAGES = ['W']):
     """
     """
     signal = data[1]*1e6
@@ -93,6 +96,15 @@ def plotter(data, fs, raw_info, plot_placeholder, stage_placeholder, hypno_place
             ax_hypno.set_yticklabels(['Wake', 'REM', 'N1', 'N2', 'N3']) #@TODO: Change it to be like an hypnogram
             
             hypno_placeholder.pyplot(fig_hypno)
+            now = datetime.now()
+            if n_epoch > 5:
+                if now.time() > t_alpha:
+                    if not 'N3' in SLEEP_STAGES[-5:-1]:
+                        st.write("Wake up! The time is now", datetime.now().strftime('%H:%M:%S'))
+                        playsound('final_course_project/data/alarm_sound.mp3')
+                elif now.time() > t_omega:
+                    st.write("Wake up! The time is now", datetime.now().strftime('%H:%M:%S'))
+                    playsound('final_course_project/data/alarm_sound.mp3')
         stage_placeholder.write(f"**Epoch:** {n_epoch}")
         prevstage_placeholder.write(f":blue[**Previous sleep stage:** {current_stage}]")
         #time.sleep(0.01)
